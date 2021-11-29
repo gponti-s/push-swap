@@ -12,22 +12,24 @@ int main(int argc, char **argv)
     stack_maker(&head_a, argc, argv);
     stack_maker(&head_b, argc, argv);
 
+    printf("Linked List from input:\n");
     printf("head_a: ");
     print_list(head_a);
     printf("head_b: ");
     print_list(head_b);
     printf("\n");
     
-    printf("swap a\n");
-    swap(&head_a);
+    printf("swap\n");
+    sa(&head_a);
     printf("head_a: ");
     print_list(head_a);
+    sb(&head_b);
     printf("head_b: ");
     print_list(head_b);
     printf("\n");
 
-    printf("swap a\n");
-    doble_stack_swap(&head_a, &head_b);
+    printf("doble swap\n");
+    ss(&head_a, &head_b);
     printf("head_a: ");
     print_list(head_a);
     printf("head_b: ");
@@ -35,7 +37,7 @@ int main(int argc, char **argv)
     printf("\n");
     
     printf("push\n");
-    push(&head_b, &head_a);
+    pa(&head_b, &head_a);
     printf("head_a: ");
     print_list(head_a);
     printf("head_b: ");
@@ -43,39 +45,41 @@ int main(int argc, char **argv)
     printf("\n");
     
     printf("push reverse\n");
-    push(&head_a, &head_b);
+    pb(&head_a, &head_b);
     printf("head_a: ");
     print_list(head_a);
     printf("head_b: ");
     print_list(head_b);
     printf("\n");
     
-    printf("rotate a\n");
-    rotate(&head_a);
+    printf("rotate\n");
+    ra(&head_a);
     printf("head_a: ");
     print_list(head_a);
+    rb(&head_b);
     printf("head_b: ");
     print_list(head_b);
     printf("\n");
 
     printf("doble rotate\n");
-    doble_stack_rotate(&head_a, &head_b);
+    rr(&head_a, &head_b);
     printf("head_a: ");
     print_list(head_a);
     printf("head_b: ");
     print_list(head_b);
     printf("\n");
     
-    printf("reverse rotate a\n");
-    reverse_rotate(&head_a);
+    printf("reverse rotate\n");
+    rra(&head_a);
     printf("head_a: ");
     print_list(head_a);
+    rrb(&head_b);
     printf("head_b: ");
     print_list(head_b);
     printf("\n");
     
     printf("doble reverse rotate\n");
-    doble_stack_reverse_rotate(&head_a, &head_b);
+    rrr(&head_a, &head_b);
     printf("head_a: ");
     print_list(head_a);
     printf("head_b: ");
