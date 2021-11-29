@@ -14,11 +14,24 @@ typedef struct s_a
     struct s_a *next;
 } node_t;
 
+
+typedef struct error_a
+{
+    int FEW_ARGUMENT;
+    int IS_NOT_DIGIT;
+    int SORTED;
+    int REPEATED;
+
+} error_t;
+
 // ***** Main - push_swap *****
 void    print_list(node_t *stack);
 
 //error_handle
-void    error_handle(int index);
+void error_handle(int argc, char **argv, error_t *error);
+void struct_inicialazer(error_t *error);
+void error_output(error_t *error);
+void check_digit(char **argv, error_t *error);
 
 //stack_maker
 node_t  *create_new_node(int value);

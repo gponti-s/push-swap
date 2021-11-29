@@ -13,8 +13,8 @@ void    swap(node_t **head)
         (*head) = temp;
         (*head)->next = temp2;
     }
-    else
-        error_handle(2);
+    //else
+        //error_handle(2);
 }
 
 void    doble_stack_swap(node_t **stack_a, node_t **stack_b)

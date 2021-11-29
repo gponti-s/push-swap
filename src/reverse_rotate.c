@@ -22,8 +22,8 @@ void    reverse_rotate(node_t **stack)
             tail = tail->next;
         tail->next = NULL;
     }
-    else
-        error_handle(2);
+    //else
+        //error_handle(2);
 }
 
 void doble_stack_reverse_rotate(node_t **stack_a, node_t **stack_b)

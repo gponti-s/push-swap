@@ -4,11 +4,12 @@ int main(int argc, char **argv)
 {
     node_t *head_a;
     node_t *head_b;
+    error_t error;
     
     head_b = NULL;
+    struct_inicialazer(&error);
     print_list(head_b);
-    if (argc < 2)
-        error_handle(1);
+    error_handle(argc, argv, &error);
     stack_maker(&head_a, argc, argv);
     stack_maker(&head_b, argc, argv);
 
