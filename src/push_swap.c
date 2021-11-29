@@ -8,11 +8,16 @@ int main(int argc, char **argv)
     
     head_b = NULL;
     struct_inicialazer(&error);
-    print_list(head_b);
     error_handle(argc, argv, &error);
     stack_maker(&head_a, argc, argv);
     stack_maker(&head_b, argc, argv);
+    if (argc == 4)
+        sorting_three(head_a);
+    if  (argc == 6)
+        sorting_five(head_a, head_b);
+    print_list(head_a);
 
+    /*
     printf("Linked List from input:\n");
     printf("head_a: ");
     print_list(head_a);
@@ -85,17 +90,7 @@ int main(int argc, char **argv)
     print_list(head_a);
     printf("head_b: ");
     print_list(head_b);
-    printf("\n");
+    printf("\n");*/
 
     return 0;
-}
-
-void print_list(node_t *stack)
-{
-    while(stack)
-    {
-        printf("%d - ", stack->data);
-        stack = stack->next;
-    }
-    printf("\n");
 }

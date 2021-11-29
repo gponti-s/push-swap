@@ -32,6 +32,7 @@ void error_handle(int argc, char **argv, error_t *error);
 void struct_inicialazer(error_t *error);
 void error_output(error_t *error);
 void check_digit(char **argv, error_t *error);
+void check_repeated(char **argv, error_t *error);
 
 //stack_maker
 node_t  *create_new_node(int value);
@@ -69,5 +70,14 @@ void    rr(node_t **stack_a, node_t **stack_b);
 void    rra(node_t **stack);
 void    rrb(node_t **stack);
 void    rrr(node_t **stack_a, node_t **stack_b);
+
+//sorting_three
+void sorting_three(node_t *head_a);
+
+//print_list
+void print_list(node_t *stack);
+
+//sorting_five
+void sorting_five(node_t *head_a, node_t *head_b);
 
 #endif
