@@ -7,17 +7,18 @@ int main(int argc, char **argv)
     error_t error;
     
     head_b = NULL;
+    head_a = NULL;
     struct_inicialazer(&error);
     error_handle(argc, argv, &error);
     stack_maker(&head_a, argc, argv);
     stack_maker(&head_b, argc, argv);
     if (argc == 4)
-        sorting_three(head_a);
-    if  (argc == 6)
-        sorting_five(head_a, head_b);
+        sorting_three(&head_a);
+    else if  (argc == 6)
+        sorting_five(&head_a, &head_b);
     print_list(head_a);
 
-    /*
+    /*git
     printf("Linked List from input:\n");
     printf("head_a: ");
     print_list(head_a);

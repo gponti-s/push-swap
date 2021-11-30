@@ -72,12 +72,12 @@ void    rrb(node_t **stack);
 void    rrr(node_t **stack_a, node_t **stack_b);
 
 //sorting_three
-void sorting_three(node_t *head_a);
+void sorting_three(node_t **head_a);
 
 //print_list
 void print_list(node_t *stack);
 
 //sorting_five
-void sorting_five(node_t *head_a, node_t *head_b);
+void sorting_five(node_t **head_a, node_t **head_b);
 
 #endif
