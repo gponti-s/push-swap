@@ -79,5 +79,16 @@ void print_list(node_t *stack);
 
 //sorting_five
 void sorting_five(node_t **head_a, node_t **head_b);
+void push_stack_b(node_t **head_a, node_t **head_b);
+void replace_second(node_t **head_a, node_t **head_b);
+int replace_penultimate(node_t **head_a, node_t **head_b, int i);
+int replace_last(node_t **head_a, node_t **head_b, int i);
+
+//sorting_hundred
+void sorting_hundred(node_t **head_a, node_t **head_b);
+void looKingFor_mini_max(node_t **head_a, node_t **head_b);
+void send_minimal(node_t **head_a, node_t **head_b, int position, int size, int minimal);
+void send_maximal(node_t **head_a, node_t **head_b, int position, int size, int maximal);
+
 
 #endif

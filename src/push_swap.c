@@ -11,12 +11,19 @@ int main(int argc, char **argv)
     struct_inicialazer(&error);
     error_handle(argc, argv, &error);
     stack_maker(&head_a, argc, argv);
-    stack_maker(&head_b, argc, argv);
-    if (argc == 4)
+    //stack_maker(&head_b, argc, argv);
+    //printf("\nhead_a unsorted:\n");
+    //print_list(head_a);
+    if (argc < 4)
         sorting_three(&head_a);
-    else if  (argc == 6)
+    else if  (argc > 3 && argc < 7)
         sorting_five(&head_a, &head_b);
+    else
+        sorting_hundred(&head_a, &head_b);
+    printf("\nhead_a sorted:\n");
     print_list(head_a);
+    printf("\nhead_b sorted:\n");
+    print_list(head_b);
 
     /*git
     printf("Linked List from input:\n");

@@ -12,7 +12,7 @@ libft:
 	@$(MAKE) -C libft/
 
 $(NAME):	libft $(OBJS)
-	@$(CC) -o $(NAME) $(CFLAGS) $(INCLUDE) $(LIB) $(OBJS) -lmlx -framework OpenGL -framework AppKit
+	@$(CC) -o $(NAME) $(CFLAGS) $(INCLUDE) $(LIB) $(OBJS)
 
 .c.o:
 	@echo "Creating object: $@"
