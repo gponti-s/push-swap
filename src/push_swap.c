@@ -5,21 +5,21 @@ int main(int argc, char **argv)
     node_t *head_a;
     node_t *head_b;
     error_t error;
+    int size;
     
     head_b = NULL;
     head_a = NULL;
     struct_inicialazer(&error);
     error_handle(argc, argv, &error);
     stack_maker(&head_a, argc, argv);
-    //stack_maker(&head_b, argc, argv);
-    //printf("\nhead_a unsorted:\n");
-    //print_list(head_a);
-    if (argc < 4)
+    size = list_size(&head_a);
+    printf("The list size is: %d\n", size);
+    if (size < 4)
         sorting_three(&head_a);
-    else if  (argc > 3 && argc < 7)
+    else if  (size > 3 && size < 7)
         sorting_five(&head_a, &head_b);
     else
-        sorting_hundred(&head_a, &head_b);
+        sorting_hundred(&head_a, &head_b, size);
     printf("\nhead_a sorted:\n");
     print_list(head_a);
     printf("\nhead_b sorted:\n");

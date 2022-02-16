@@ -12,20 +12,20 @@
 
 #include "push_swap.h"
 
-void    ra(node_t **stack)
+void	ra(node_t **stack)
 {
-    rotate(stack);
-    ft_putstr_fd("ra\n", 1);
+	rotate(stack);
+	ft_putstr_fd("ra\n", 1);
 }
 
-void    rb(node_t **stack)
+void	rb(node_t **stack)
 {
-    rotate(stack);
-    ft_putstr_fd("rb\n", 1);
+	rotate(stack);
+	ft_putstr_fd("rb\n", 1);
 }
 
-void    rr(node_t **stack_a, node_t **stack_b)
+void	rr(node_t **stack_a, node_t **stack_b)
 {
-    doble_stack_rotate(stack_a, stack_b);
-    ft_putstr_fd("rr\n", 1);
+	doble_stack_rotate(stack_a, stack_b);
+	ft_putstr_fd("rr\n", 1);
 }

@@ -12,13 +12,13 @@
 
 #include "push_swap.h"
 
-void print_list(node_t *stack)
+void	print_list(node_t *stack)
 {
-    while(stack)
-    {
-        ft_putnbr_fd(stack->data, 1);
-        write (1, " - ", 3);
-        stack = stack->next;
-    }
-    write(1, "\n", 1);
+	while (stack)
+	{
+		ft_putnbr_fd(stack->data, 1);
+		write (1, " - ", 3);
+		stack = stack->next;
+	}
+	write(1, "\n", 1);
 }

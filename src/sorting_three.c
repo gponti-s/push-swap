@@ -12,23 +12,28 @@
 
 #include "push_swap.h"
 
-void sorting_three(node_t **head_a)
+void	sorting_three(node_t **head_a)
 {
-    if ((*head_a)->data > (*head_a)->next->data && (*head_a)->next->data < (*head_a)->next->next->data
-    && (*head_a)->data > (*head_a)->next->next->data)
-        ra(head_a);
-    else if ((*head_a)->data < (*head_a)->next->data && (*head_a)->next->data > (*head_a)->next->next->data
-    && (*head_a)->data > (*head_a)->next->next->data)
-        rra(head_a);
-    else if ((*head_a)->data < (*head_a)->next->data && (*head_a)->next->data < (*head_a)->next->next->data
-    && (*head_a)->data < (*head_a)->next->next->data)
-        return ;
-    else
-        sa(head_a);
-    if ((*head_a)->data > (*head_a)->next->data && (*head_a)->next->data < (*head_a)->next->next->data
-    && (*head_a)->data > (*head_a)->next->next->data)
-        ra(head_a);
-    else if ((*head_a)->data < (*head_a)->next->data && (*head_a)->next->data > (*head_a)->next->next->data
-    && (*head_a)->data > (*head_a)->next->next->data)
-        rra(head_a);
+	if ((*head_a)->data > (*head_a)->next->data
+		&& (*head_a)->next->data < (*head_a)->next->next->data
+		&& (*head_a)->data > (*head_a)->next->next->data)
+		ra(head_a);
+	else if ((*head_a)->data < (*head_a)->next->data
+		&& (*head_a)->next->data > (*head_a)->next->next->data
+		&& (*head_a)->data > (*head_a)->next->next->data)
+		rra(head_a);
+	else if ((*head_a)->data < (*head_a)->next->data
+		&& (*head_a)->next->data < (*head_a)->next->next->data
+		&& (*head_a)->data < (*head_a)->next->next->data)
+		return ;
+	else
+		sa(head_a);
+	if ((*head_a)->data > (*head_a)->next->data
+		&& (*head_a)->next->data < (*head_a)->next->next->data
+		&& (*head_a)->data > (*head_a)->next->next->data)
+		ra(head_a);
+	else if ((*head_a)->data < (*head_a)->next->data
+		&& (*head_a)->next->data > (*head_a)->next->next->data
+		&& (*head_a)->data > (*head_a)->next->next->data)
+		rra(head_a);
 }

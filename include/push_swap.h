@@ -10,6 +10,7 @@
 typedef struct s_a
 {
     int data;
+    int index;
 
     struct s_a *next;
 } node_t;
@@ -37,6 +38,9 @@ void check_repeated(char **argv, error_t *error);
 //stack_maker
 node_t  *create_new_node(int value);
 void    stack_maker(node_t **head, int size, char **string);
+
+//list_size
+int list_size(node_t **head_a);
 
 //swap
 void    swap(node_t **head);
@@ -85,7 +89,7 @@ int replace_penultimate(node_t **head_a, node_t **head_b, int i);
 int replace_last(node_t **head_a, node_t **head_b, int i);
 
 //sorting_hundred
-void sorting_hundred(node_t **head_a, node_t **head_b);
+void sorting_hundred(node_t **head_a, node_t **head_b, int size);
 void looKingFor_mini_max(node_t **head_a, node_t **head_b);
 void send_minimal(node_t **head_a, node_t **head_b, int position, int size, int minimal);
 void send_maximal(node_t **head_a, node_t **head_b, int position, int size, int maximal);

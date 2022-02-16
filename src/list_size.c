@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   output_push.c                                      :+:      :+:    :+:   */
+/*   list_size.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gponti-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/29 12:28:41 by gponti-s          #+#    #+#             */
-/*   Updated: 2021/11/29 12:28:43 by gponti-s         ###   ########.fr       */
+/*   Created: 2022/02/16 16:19:16 by gponti-s          #+#    #+#             */
+/*   Updated: 2022/02/16 16:19:19 by gponti-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pa(node_t **stack_dst, node_t **stack_src)
+int	list_size(node_t **head_a)
 {
-	push(stack_dst, stack_src);
-	ft_putstr_fd("pa\n", 1);
-}
+	node_t	*temp;
+	int		size;
 
-void	pb(node_t **stack_dst, node_t **stack_src)
-{
-	push(stack_dst, stack_src);
-	ft_putstr_fd("pb\n", 1);
+	temp = *head_a;
+	size = 1;
+	while (temp->next != NULL)
+	{
+		temp = temp->next;
+		size++;
+	}
+	return (size);
 }
