@@ -13,17 +13,17 @@ int main(int argc, char **argv)
     error_handle(argc, argv, &error);
     stack_maker(&head_a, argc, argv);
     size = list_size(&head_a);
-    printf("The list size is: %d\n", size);
+    //printf("The list size is: %d\n", size);
     if (size < 4)
         sorting_three(&head_a);
     else if  (size > 3 && size < 7)
         sorting_five(&head_a, &head_b);
     else
         sorting_hundred(&head_a, &head_b, size);
-    printf("\nhead_a sorted:\n");
-    print_list(head_a);
-    printf("\nhead_b sorted:\n");
-    print_list(head_b);
+    //printf("\nhead_a sorted:\n");
+    //print_list(head_a);
+    //printf("\nhead_b sorted:\n");
+    //print_list(head_b);
 
     /*git
     printf("Linked List from input:\n");
