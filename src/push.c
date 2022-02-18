@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-void	push(node_t **stack_dst, node_t **stack_src)
+void	push(t_node **stack_dst, t_node **stack_src)
 {
-	node_t	*temp;
-	node_t	*temp2;
+	t_node	*temp;
+	t_node	*temp2;
 
 	if (!(*stack_src))
 		return ;

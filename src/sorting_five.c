@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	sorting_five(node_t **head_a, node_t **head_b)
+void	sorting_five(t_node **head_a, t_node **head_b)
 {
 	int	i;
 
@@ -37,7 +37,7 @@ void	sorting_five(node_t **head_a, node_t **head_b)
 	}
 }
 
-void	replace_second(node_t **head_a, node_t **head_b)
+void	replace_second(t_node **head_a, t_node **head_b)
 {
 	if ((*head_b)->data < (*head_a)->data)
 		pa(head_a, head_b);
@@ -49,7 +49,7 @@ void	replace_second(node_t **head_a, node_t **head_b)
 	}
 }
 
-void	push_stack_b(node_t **head_a, node_t **head_b)
+void	push_stack_b(t_node **head_a, t_node **head_b)
 {
 	pb(head_b, head_a);
 	pb(head_b, head_a);
@@ -58,7 +58,7 @@ void	push_stack_b(node_t **head_a, node_t **head_b)
 		sb(head_b);
 }
 
-int	replace_penultimate(node_t **head_a, node_t **head_b, int i)
+int	replace_penultimate(t_node **head_a, t_node **head_b, int i)
 {
 	rra(head_a);
 	pa(head_a, head_b);
@@ -76,7 +76,7 @@ int	replace_penultimate(node_t **head_a, node_t **head_b, int i)
 	return (0);
 }
 
-int	replace_last(node_t **head_a, node_t **head_b, int i)
+int	replace_last(t_node **head_a, t_node **head_b, int i)
 {
 	pa(head_a, head_b);
 	if (i == 0 && (*head_b)->data > (*head_a)->next->next->data

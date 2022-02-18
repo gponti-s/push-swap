@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-void	rotate(node_t **stack)
+void	rotate(t_node **stack)
 {
-	node_t	*temp;
-	node_t	*end;
+	t_node	*temp;
+	t_node	*end;
 
 	end = *stack;
 	while (end->next != NULL)
@@ -26,7 +26,7 @@ void	rotate(node_t **stack)
 	temp->next = NULL;
 }
 
-void	doble_stack_rotate(node_t **stack_a, node_t **stack_b)
+void	doble_stack_rotate(t_node **stack_a, t_node **stack_b)
 {
 	rotate(stack_a);
 	rotate(stack_b);

@@ -12,13 +12,13 @@
 
 #include "push_swap.h"
 
-void	pa(node_t **stack_dst, node_t **stack_src)
+void	pa(t_node **stack_dst, t_node **stack_src)
 {
 	push(stack_dst, stack_src);
 	ft_putstr_fd("pa\n", 1);
 }
 
-void	pb(node_t **stack_dst, node_t **stack_src)
+void	pb(t_node **stack_dst, t_node **stack_src)
 {
 	push(stack_dst, stack_src);
 	ft_putstr_fd("pb\n", 1);

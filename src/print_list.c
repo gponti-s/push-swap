@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	print_list(node_t *stack)
+void	print_list(t_node *stack)
 {
 	while (stack)
 	{

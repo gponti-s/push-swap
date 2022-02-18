@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-void	swap(node_t **head)
+void	swap(t_node **head)
 {
-	node_t	*temp;
-	node_t	*temp2;
+	t_node	*temp;
+	t_node	*temp2;
 
 	if ((*head) != NULL && (*head)->next != NULL)
 	{
@@ -27,7 +27,7 @@ void	swap(node_t **head)
 	}
 }
 
-void	doble_stack_swap(node_t **stack_a, node_t **stack_b)
+void	doble_stack_swap(t_node **stack_a, t_node **stack_b)
 {
 	swap(stack_a);
 	swap(stack_b);

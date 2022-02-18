@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-int	list_size(node_t **head_a)
+int	list_size(t_node **head_a)
 {
-	node_t	*temp;
+	t_node	*temp;
 	int		size;
 
 	temp = *head_a;

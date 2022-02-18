@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	sorting_three(node_t **head_a)
+void	sorting_three(t_node **head_a)
 {
 	if ((*head_a)->data > (*head_a)->next->data
 		&& (*head_a)->next->data < (*head_a)->next->next->data

@@ -13,7 +13,7 @@ typedef struct s_a
     int index;
 
     struct s_a *next;
-} node_t;
+} t_node;
 
 
 typedef struct error_a
@@ -23,76 +23,76 @@ typedef struct error_a
     int SORTED;
     int REPEATED;
 
-} error_t;
+} t_error;
 
 // ***** Main - push_swap *****
-void    print_list(node_t *stack);
+void    print_list(t_node *stack);
 
 //error_handle
-void error_handle(int argc, char **argv, error_t *error);
-void struct_inicialazer(error_t *error);
-void error_output(error_t *error);
-void check_digit(char **argv, error_t *error);
-void check_repeated(char **argv, error_t *error);
+void error_handle(int argc, char **argv, t_error *error);
+void struct_inicialazer(t_error *error);
+void error_output(t_error *error);
+void check_digit(char **argv, t_error *error);
+void check_repeated(char **argv, t_error *error);
 
 //stack_maker
-node_t  *create_new_node(int value);
-void    stack_maker(node_t **head, int size, char **string);
+t_node  *create_new_node(int value);
+void    stack_maker(t_node **head, int size, char **string);
 
 //list_size
-int list_size(node_t **head_a);
+int list_size(t_node **head_a);
 
 //swap
-void    swap(node_t **head);
-void    doble_stack_swap(node_t **stack_a, node_t **stack_b);
+void    swap(t_node **head);
+void    doble_stack_swap(t_node **stack_a, t_node **stack_b);
 
-void    push(node_t **stack_dst, node_t **stack_src);
+void    push(t_node **stack_dst, t_node **stack_src);
 
 //rotate
-void    rotate(node_t **stack);
-void    doble_stack_rotate(node_t **stack_a, node_t **stack_b);
+void    rotate(t_node **stack);
+void    doble_stack_rotate(t_node **stack_a, t_node **stack_b);
 
 //reverse_rotate
-void    reverse_rotate(node_t **stack);
-void    doble_stack_reverse_rotate(node_t **stack_a, node_t **stack_b);
+void    reverse_rotate(t_node **stack);
+void    doble_stack_reverse_rotate(t_node **stack_a, t_node **stack_b);
 
 // output_swap
-void    sa(node_t  **head);
-void    sb(node_t  **head);
-void    ss(node_t **stack_a, node_t **stack_b);
+void    sa(t_node  **head);
+void    sb(t_node  **head);
+void    ss(t_node **stack_a, t_node **stack_b);
 
 //output_push
-void    pa(node_t **stack_dst, node_t **stack_src);
-void    pb(node_t **stack_dst, node_t **stack_src);
+void    pa(t_node **stack_dst, t_node **stack_src);
+void    pb(t_node **stack_dst, t_node **stack_src);
 
 //output_rotate
-void    ra(node_t **stack);
-void    rb(node_t **stack);
-void    rr(node_t **stack_a, node_t **stack_b);
+void    ra(t_node **stack);
+void    rb(t_node **stack);
+void    rr(t_node **stack_a, t_node **stack_b);
 
 //output_reverse_rotate
-void    rra(node_t **stack);
-void    rrb(node_t **stack);
-void    rrr(node_t **stack_a, node_t **stack_b);
+void    rra(t_node **stack);
+void    rrb(t_node **stack);
+void    rrr(t_node **stack_a, t_node **stack_b);
 
 //sorting_three
-void sorting_three(node_t **head_a);
+void sorting_three(t_node **head_a);
 
 //print_list
-void print_list(node_t *stack);
+void print_list(t_node *stack);
 
 //sorting_five
-void sorting_five(node_t **head_a, node_t **head_b);
-void push_stack_b(node_t **head_a, node_t **head_b);
-void replace_second(node_t **head_a, node_t **head_b);
-int replace_penultimate(node_t **head_a, node_t **head_b, int i);
-int replace_last(node_t **head_a, node_t **head_b, int i);
+void sorting_five(t_node **head_a, t_node **head_b);
+void push_stack_b(t_node **head_a, t_node **head_b);
+void replace_second(t_node **head_a, t_node **head_b);
+int replace_penultimate(t_node **head_a, t_node **head_b, int i);
+int replace_last(t_node **head_a, t_node **head_b, int i);
 
-//sorting_hundred
-void sorting_hundred(node_t **head_a, node_t **head_b, int size);
-void looKingFor_mini_max(node_t **head_a, node_t **head_b);
-void send_minimal(node_t **head_a, node_t **head_b, int position, int size, int minimal);
-void send_maximal(node_t **head_a, node_t **head_b, int position, int size, int maximal);
+//sorting_hig_numbers
+void sorting_big_numbers(t_node **head_a, t_node **head_b, int size);
+void making_array(t_node **head_a, int size);
+void sorting_array(t_node **head_a, int size, int list[]);
+void array_index_struct(t_node **head_a, int size, int list[]);
 
 
 #endif

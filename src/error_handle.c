@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	struct_inicialazer(error_t *error)
+void	struct_inicialazer(t_error *error)
 {
 	error->FEW_ARGUMENT = 0;
 	error->IS_NOT_DIGIT = 0;
@@ -20,7 +20,7 @@ void	struct_inicialazer(error_t *error)
 	error->REPEATED = 0;
 }
 
-void	error_handle(int argc, char **argv, error_t *error)
+void	error_handle(int argc, char **argv, t_error *error)
 {
 	if (argc <= 2)
 	{
@@ -31,7 +31,7 @@ void	error_handle(int argc, char **argv, error_t *error)
 	check_repeated(argv, error);
 }
 
-void	check_digit(char **argv, error_t *error)
+void	check_digit(char **argv, t_error *error)
 {
 	int	i;
 	int	j;
@@ -57,7 +57,7 @@ void	check_digit(char **argv, error_t *error)
 	}
 }
 
-void	check_repeated(char **argv, error_t *error)
+void	check_repeated(char **argv, t_error *error)
 {
 	int	i;
 	int	j;
@@ -83,7 +83,7 @@ void	check_repeated(char **argv, error_t *error)
 	error_output(error);
 }
 
-void	error_output(error_t *error)
+void	error_output(t_error *error)
 {
 	if (error->FEW_ARGUMENT == 1)
 		ft_putstr_fd("Error - Too few arguments", 1);

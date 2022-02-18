@@ -12,19 +12,19 @@
 
 #include "push_swap.h"
 
-void	sa(node_t **head)
+void	sa(t_node **head)
 {
 	swap(head);
 	ft_putstr_fd("sa\n", 1);
 }
 
-void	sb(node_t **head)
+void	sb(t_node **head)
 {
 	swap(head);
 	ft_putstr_fd("sb\n", 1);
 }
 
-void	ss(node_t **stack_a, node_t **stack_b)
+void	ss(t_node **stack_a, t_node **stack_b)
 {
 	doble_stack_swap(stack_a, stack_b);
 	ft_putstr_fd("ss\n", 1);

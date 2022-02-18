@@ -2,9 +2,9 @@
 
 int main(int argc, char **argv)
 {
-    node_t *head_a;
-    node_t *head_b;
-    error_t error;
+    t_node *head_a;
+    t_node *head_b;
+    t_error error;
     int size;
     
     head_b = NULL;
@@ -19,7 +19,7 @@ int main(int argc, char **argv)
     else if  (size > 3 && size < 7)
         sorting_five(&head_a, &head_b);
     else
-        sorting_hundred(&head_a, &head_b, size);
+        sorting_big_numbers(&head_a, &head_b, size);
     //printf("\nhead_a sorted:\n");
     //print_list(head_a);
     //printf("\nhead_b sorted:\n");

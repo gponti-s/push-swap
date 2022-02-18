@@ -12,22 +12,22 @@
 
 #include "push_swap.h"
 
-node_t	*create_new_node(int value)
+t_node	*create_new_node(int value)
 {
-	node_t	*result;
+	t_node	*result;
 
-	result = malloc(sizeof(node_t));
+	result = malloc(sizeof(t_node));
 	result->data = value;
 	result->next = NULL;
 	result->index = 0;
 	return (result);
 }
 
-void	stack_maker(node_t **head, int size, char **string)
+void	stack_maker(t_node **head, int size, char **string)
 {
 	int		i;
 	int		value;
-	node_t	*temp;
+	t_node	*temp;
 
 	i = (size - 1);
 	while (i > 0)
