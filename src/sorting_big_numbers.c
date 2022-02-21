@@ -29,8 +29,10 @@ void	sorting_big_numbers(t_node **head_a, t_node **head_b, int size)
 	i = 0;
 	while (size >> bit_range)
 		bit_range++;
-	while (i <= bit_range)
+	while ((i <= bit_range))
 	{
+		if (check_sorted(head_a) == 1)
+			return;
 		j = size + 1;
 		while (--j > 0)
 		{
@@ -43,7 +45,6 @@ void	sorting_big_numbers(t_node **head_a, t_node **head_b, int size)
 			pa(head_a, head_b);
 		i++;
 	}
-	print_list(*head_a);
 }
 
 /* *********************** Array - Index ***********************
@@ -93,14 +94,6 @@ void	sorting_array(t_node **head_a, int size, int list[])
 		}
 		i++;
 	}
-	// *************** printer - I need to remove!!
-	i = 0;
-	printf("The array sorted: \n");
-	while (i < size)
-	{
-		printf("%d ->", list[i]);
-		i++;
-	}
 	array_index_struct(head_a, size, list);
 }
 
@@ -122,15 +115,4 @@ void	array_index_struct(t_node **head_a, int size, int list[])
 		temp->index = i;
 		i++;
 	}
-
-	// *************** printer - I need to remove!!
-	printf("The index: \n");
-	temp = *head_a;
-	while (temp)
-	{
-		ft_putnbr_fd(temp->index, 1);
-		write (1, " = ", 3);
-		temp = temp->next;
-	}
-	write(1, "\n", 1);
 }

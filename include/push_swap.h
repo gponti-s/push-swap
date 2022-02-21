@@ -6,6 +6,12 @@
 #include <stdlib.h>
 #include "libft.h"
 
+typedef enum e_prog_state {
+    STATE_OK,
+    FEW_ARGUMENTS,
+    IS_NOT_DIGIT,
+    REPEATED,
+} t_prog_state;
 
 typedef struct s_a
 {
@@ -16,24 +22,14 @@ typedef struct s_a
 } t_node;
 
 
-typedef struct error_a
-{
-    int FEW_ARGUMENT;
-    int IS_NOT_DIGIT;
-    int SORTED;
-    int REPEATED;
-
-} t_error;
-
 // ***** Main - push_swap *****
 void    print_list(t_node *stack);
 
 //error_handle
-void error_handle(int argc, char **argv, t_error *error);
-void struct_inicialazer(t_error *error);
-void error_output(t_error *error);
-void check_digit(char **argv, t_error *error);
-void check_repeated(char **argv, t_error *error);
+void	parsing_check(int argc, char **argv);
+t_prog_state	check_digit(char **argv);
+t_prog_state	check_repeated(char **argv);
+void	error_print(t_prog_state prog_state);
 
 //stack_maker
 t_node  *create_new_node(int value);
@@ -93,6 +89,9 @@ void sorting_big_numbers(t_node **head_a, t_node **head_b, int size);
 void making_array(t_node **head_a, int size);
 void sorting_array(t_node **head_a, int size, int list[]);
 void array_index_struct(t_node **head_a, int size, int list[]);
+
+//Check_sort
+int check_sorted(t_node **head_a);
 
 
 #endif

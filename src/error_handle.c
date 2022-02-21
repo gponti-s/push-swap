@@ -12,26 +12,25 @@
 
 #include "push_swap.h"
 
-void	struct_inicialazer(t_error *error)
+
+void	parsing_check(int argc, char **argv)
 {
-	error->FEW_ARGUMENT = 0;
-	error->IS_NOT_DIGIT = 0;
-	error->SORTED = 1;
-	error->REPEATED = 0;
+	t_prog_state prog_state;
+	// cuidado com 4 -1-5 0 checar se ha sinal e se prox. index e dig., depois checar se ha sinal nos proximos index ou so numberos.
+
+	if (argc <= 3)
+		prog_state = FEW_ARGUMENTS;
+	else
+		prog_state = STATE_OK;
+	if (prog_state == STATE_OK)
+		prog_state = check_digit(argv);
+	if (prog_state == STATE_OK)
+		prog_state = check_repeated(argv);
+	if (prog_state != STATE_OK)
+		error_print(prog_state);
 }
 
-void	error_handle(int argc, char **argv, t_error *error)
-{
-	if (argc <= 2)
-	{
-		error->FEW_ARGUMENT = 1;
-		error_output(error);
-	}
-	check_digit(argv, error);
-	check_repeated(argv, error);
-}
-
-void	check_digit(char **argv, t_error *error)
+t_prog_state	check_digit(char **argv)
 {
 	int	i;
 	int	j;
@@ -47,17 +46,15 @@ void	check_digit(char **argv, t_error *error)
 				j++;
 			result = ft_isdigit(argv[i][j]);
 			if (result == 0)
-			{
-				error->IS_NOT_DIGIT = 1;
-				error_output(error);
-			}
+				return (IS_NOT_DIGIT);
 			j++;
 		}
 		i++;
 	}
+	return (STATE_OK);
 }
 
-void	check_repeated(char **argv, t_error *error)
+t_prog_state	check_repeated(char **argv)
 {
 	int	i;
 	int	j;
@@ -73,26 +70,22 @@ void	check_repeated(char **argv, t_error *error)
 		{
 			value2 = ft_atoi(argv[j]);
 			if (value1 == value2)
-				error->REPEATED = 1;
-			else if (value2 < value1)
-				error->SORTED = 0;
+				return (REPEATED);
 			j++;
 		}
 		i++;
 	}
-	error_output(error);
+	return (STATE_OK);
 }
 
-void	error_output(t_error *error)
+void	error_print(t_prog_state prog_state)
 {
-	if (error->FEW_ARGUMENT == 1)
+	if (prog_state == FEW_ARGUMENTS)
 		ft_putstr_fd("Error - Too few arguments", 1);
-	else if (error->IS_NOT_DIGIT == 1)
+	else if (prog_state == IS_NOT_DIGIT)
 		ft_putstr_fd("Error - Argumet is not digit", 1);
-	else if (error->REPEATED == 1)
+	else if (prog_state == REPEATED)
 		ft_putstr_fd("Error - Argumet repeated", 1);
-	else if (error->SORTED == 1)
-		ft_putstr_fd("Error - Argumet sorted", 1);
 	else
 		return ;
 	exit(1);
