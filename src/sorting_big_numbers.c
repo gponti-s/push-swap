@@ -12,10 +12,11 @@
 
 #include "push_swap.h"
 
-/* ****************** Bitwise Operations ****************
-** This function use the Bitewis Operations to sort the numbers
+/* ******************** Bitwise Operations **********************
+** This function use the Bitwise Operations to sort the numbers
 ** The whole ideia is that, atributing a index to each number
-** using an array, sorting this array......
+** using an array, sorting will be done from index, using bitwise, 
+** to sort from smallest to largest
 */
 
 void	sorting_big_numbers(t_node **head_a, t_node **head_b, int size)
@@ -32,7 +33,7 @@ void	sorting_big_numbers(t_node **head_a, t_node **head_b, int size)
 	while ((i <= bit_range))
 	{
 		if (check_sorted(head_a) == 1)
-			return;
+			return ;
 		j = size + 1;
 		while (--j > 0)
 		{
@@ -48,15 +49,15 @@ void	sorting_big_numbers(t_node **head_a, t_node **head_b, int size)
 }
 
 /* *********************** Array - Index ***********************
-** The functions below are responseble to, respectivile: make
-** an array with all numbers of stack "a"; sorting the numbers
-** into array; atribute the array's index to each number in the
+** The functions below are responsible for, respectively: filling
+** an array with all numbers of stack "a"; sort the numbers
+** into array; assign the array index to each number in the
 ** stack "a".
 */
 
 void	making_array(t_node **head_a, int size)
 {
-	int		list[size - 1];
+	int		list[10000];
 	int		i;
 	t_node	*temp;
 

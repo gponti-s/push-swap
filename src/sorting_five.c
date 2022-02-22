@@ -12,11 +12,11 @@
 
 #include "push_swap.h"
 
-void	sorting_five(t_node **head_a, t_node **head_b)
+void	sorting_five(t_node **head_a, t_node **head_b, int size)
 {
 	int	i;
 
-	push_stack_b(head_a, head_b);
+	push_stack_b(head_a, head_b, size);
 	i = 0;
 	while (i < 2)
 	{
@@ -49,13 +49,15 @@ void	replace_second(t_node **head_a, t_node **head_b)
 	}
 }
 
-void	push_stack_b(t_node **head_a, t_node **head_b)
+void	push_stack_b(t_node **head_a, t_node **head_b, int size)
 {
 	pb(head_b, head_a);
-	pb(head_b, head_a);
+	if (size == 5)
+		pb(head_b, head_a);
 	sorting_three(head_a);
-	if ((*head_b)->data < (*head_b)->next->data)
-		sb(head_b);
+	if (size == 5)
+		if ((*head_b)->data < (*head_b)->next->data)
+			sb(head_b);
 }
 
 int	replace_penultimate(t_node **head_a, t_node **head_b, int i)

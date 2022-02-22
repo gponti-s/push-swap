@@ -12,13 +12,11 @@
 
 #include "push_swap.h"
 
-
 void	parsing_check(int argc, char **argv)
 {
-	t_prog_state prog_state;
-	// cuidado com 4 -1-5 0 checar se ha sinal e se prox. index e dig., depois checar se ha sinal nos proximos index ou so numberos.
+	t_prog_state	prog_state;
 
-	if (argc <= 3)
+	if (argc <= 1)
 		prog_state = FEW_ARGUMENTS;
 	else
 		prog_state = STATE_OK;
@@ -42,7 +40,7 @@ t_prog_state	check_digit(char **argv)
 		j = 0;
 		while (argv[i][j])
 		{
-			if (argv[i][j] == '-' || argv[i][j] == '+')
+			if ((argv[i][j] == '-' || argv[i][j] == '+') && j == 0)
 				j++;
 			result = ft_isdigit(argv[i][j]);
 			if (result == 0)
