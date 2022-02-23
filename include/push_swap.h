@@ -18,11 +18,15 @@
 # include <stdlib.h>
 # include "libft.h"
 
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
+
 typedef enum e_prog_state{
 	STATE_OK,
 	FEW_ARGUMENTS,
 	IS_NOT_DIGIT,
 	REPEATED,
+	ERROR,
 }				t_prog_state;
 
 typedef struct s_a
@@ -108,5 +112,7 @@ void			array_index_struct(t_node **head_a, int size, int list[]);
 
 //Check_sort
 int				check_sorted(t_node **head_a);
+
+long			ft_atoi_max(const char *str);
 
 #endif

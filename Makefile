@@ -1,9 +1,10 @@
+MAKEFLAGS += --quiet
 SRC	= $(shell find src -type f -name "*.c")
 LIB = $(shell find libft -type f -name "*.a")
 INCLUDE	= $(addprefix -I, include)
 OBJS	=$(SRC:.c=.o)
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
 NAME = push_swap
 
 all: libft $(NAME)

@@ -30,9 +30,9 @@ void	parsing_check(int argc, char **argv)
 
 t_prog_state	check_digit(char **argv)
 {
-	int	i;
-	int	j;
-	int	result;
+	int			i;
+	int			j;
+	long long	result;
 
 	i = 1;
 	while (argv[i])
@@ -45,6 +45,9 @@ t_prog_state	check_digit(char **argv)
 			result = ft_isdigit(argv[i][j]);
 			if (result == 0)
 				return (IS_NOT_DIGIT);
+			result = ft_atoi_max(&argv[i][j]);
+			if (result >= INT_MAX || result <= INT_MIN)
+				return (ERROR);
 			j++;
 		}
 		i++;
@@ -84,6 +87,8 @@ void	error_print(t_prog_state prog_state)
 		ft_putstr_fd("Error - Argumet is not digit", 1);
 	else if (prog_state == REPEATED)
 		ft_putstr_fd("Error - Argumet repeated", 1);
+	else if (prog_state == ERROR)
+		ft_putstr_fd("Error", 1);
 	else
 		return ;
 	exit(1);
